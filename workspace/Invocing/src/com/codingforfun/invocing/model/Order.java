@@ -2,6 +2,7 @@ package com.codingforfun.invocing.model;
 
 import lombok.Data;
 import org.openxava.annotations.ReferenceView;
+import org.openxava.annotations.Tab;
 import org.openxava.annotations.View;
 
 import javax.persistence.Entity;
@@ -16,6 +17,8 @@ import javax.persistence.ManyToOne;
         "details;" +
         "remarks"
 )
+
+@Tab(baseCondition = "deleted=false")
 
 @Data
 @Entity

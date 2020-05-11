@@ -182,7 +182,7 @@ openxava.refreshPage = function(result) {
 	openxava.lastApplication=result.application;
 	openxava.lastModule=result.module;
 	openxava.hasOnSelectAll(result.application, result.module);
-	openxava.showMessages(result); 
+	openxava.showMessages(result);
 	openxava.resetRequesting(result);
 	openxava.propertiesUsedInCalculationsChange(result);
 	openxava.dataChanged = result.dataChanged; 
@@ -310,9 +310,24 @@ openxava.propertiesUsedInCalculationsChange = function(result) {
 openxava.showMessages = function(result) { 
 	var messagesIsEmpty = openxava.getElementById(result.application, result.module, "messages_table") == null;
 	var errorsIsEmpty = openxava.getElementById(result.application, result.module, "errors_table") == null;
-	if (!messagesIsEmpty) openxava.effectShow(result.application, result.module, "messages");
-	if (!errorsIsEmpty) openxava.effectShow(result.application, result.module, "errors");
+	if (!messagesIsEmpty) {
+		openxava.effectShow(result.application, result.module, "messages");
+		openxava.fadeMessages(result, "messages")
+	}
+	if (!errorsIsEmpty){
+		openxava.effectShow(result.application, result.module, "errors");
+		openxava.fadeMessages(result, "errors")
+	}
 }
+
+//custom funciton
+openxava.fadeMessages = function(result, messageType) {
+	setTimeout(function() {
+		var mess=openxava.getElementById(result.application,result.module, messageType);
+		$(mess).fadeOut();
+	}, 2000)
+}
+
 
 openxava.initSelectedRows = function() { 
 	$("._XAVA_SELECTED_ROW_").addClass(openxava.selectedRowClass);

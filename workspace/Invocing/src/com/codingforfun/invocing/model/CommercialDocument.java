@@ -7,6 +7,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
+import org.openxava.model.Identifiable;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -24,15 +25,7 @@ import java.util.Collection;
 
 @Data
 @Entity
-abstract public class CommercialDocument {
-
-    @Id
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
-    @GeneratedValue(generator = "system-uuid")
-    @Hidden
-    @Column(length = 32)
-    private String oid;
-
+abstract public class CommercialDocument extends Deletable {
 
     @Column(length = 4)
     @DefaultValueCalculator(CurrentYearCalculator.class)
@@ -45,6 +38,7 @@ abstract public class CommercialDocument {
     @Required
     @Column(length = 50)
     @DefaultValueCalculator(CurrentLocalDateCalculator.class)
+    @Stereotype("LOCALDATE")
     private LocalDate date;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -57,6 +51,7 @@ abstract public class CommercialDocument {
 
     @Stereotype("MEMO")
     private String remarks;
+
 
 
 }

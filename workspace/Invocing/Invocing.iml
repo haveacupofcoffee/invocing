@@ -10,19 +10,6 @@
       <src_folder value="file://$MODULE_DIR$/i18n" expected_position="6" />
     </src_description>
   </component>
-  <component name="FacetManager">
-    <facet type="jpa" name="JPA">
-      <configuration>
-        <setting name="validation-enabled" value="true" />
-        <datasource-mapping>
-          <factory-entry name="default" />
-          <factory-entry name="junit" />
-        </datasource-mapping>
-        <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/persistence/META-INF/persistence.xml" />
-      </configuration>
-    </facet>
-  </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/web/WEB-INF/classes" />
     <exclude-output />
@@ -46,5 +33,9 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="lombok" level="project" />
+    <orderEntry type="library" name="quartz-2.3.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="slf4j-log4j12-1.7.7" level="project" />
+    <orderEntry type="library" name="log4j-1.2.16" level="project" />
+    <orderEntry type="library" name="slf4j-api-1.7.7" level="project" />
   </component>
 </module>
