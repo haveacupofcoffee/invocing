@@ -12,8 +12,8 @@ public class Address {
     @Column(length = 30)   //The members are annotated as in entity case
     private String street;
 
-    @Column(length = 5)
-    private int zipCode;
+    @Column(length = 7)
+    private String zipCode;
 
     @Column(length = 20)
     private String city;
