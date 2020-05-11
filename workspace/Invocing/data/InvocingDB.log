@@ -1,0 +1,6 @@
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
+alter table INVOCING.COMMERCIALDOCUMENT add column deleted boolean default false
+alter table INVOCING.COMMERCIALDOCUMENT add column invoice_id varchar(32)
+alter table Invocing.CommercialDocument add constraint FKbv3wvogocwg7hchkv0390yqva foreign key (invoice_id) references Invocing.CommercialDocument
