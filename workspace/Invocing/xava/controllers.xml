@@ -24,6 +24,16 @@
 
     </controller>
 
+    <controller name="Order">
+        <extends controller="Invoicing"/>
+
+        <action name="createInvoice" mode="detail"
+                class="com.codingforfun.invocing.actions.CreateInvoiceFromOrderAction"/>
+
+        <!-- mode="detail" : Only in detail mode -->
+
+    </controller>
+
 
 
 

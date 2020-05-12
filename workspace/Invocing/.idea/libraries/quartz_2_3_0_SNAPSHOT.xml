@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="quartz-2.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/quartz-2.3.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/quartz-jobs-2.3.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
