@@ -10,7 +10,7 @@ public class CreateInvoiceFromOrderAction extends ViewBaseAction {  //To use get
         //1. We use JPA to obtain the Order entity displayed in the view
         Order order = XPersistence.getManager().find(Order.class, getView().getValue("oid"));
         //2. The real work is delegated to the entity
-        order.createInvoice();
+       /* order.createInvoice();*/
         //3. In order to see the created invoice in 'Invoice' tab
         getView().refresh();
         //4. Confirmation message
